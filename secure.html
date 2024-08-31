@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secured Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to the Secured Page</h1>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        // Simple authentication check
+        if (!localStorage.getItem('authenticatedUser')) {
+            alert('Logged In successfully.');
+            window.location.href = 'index.html'; // Redirect to login page
+        }
+
+        // Logout function
+        function logout() {
+            localStorage.removeItem('authenticatedUser');
+            alert('You have been logged out.');
+            window.location.href = 'index.html'; // Redirect to login page
+        }
+    </script>
+</body>
+
+</html>
